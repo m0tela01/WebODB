@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-image: url("black.jpg"), url("black.jpg");
+    background-image: url("blue.jpg");
+    background-attachment: fixed;
   }
 
 .textClass{

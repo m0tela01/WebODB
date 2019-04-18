@@ -1,0 +1,61 @@
+<!--The page data/elements-->
+<div>
+  <div>
+    <h2 class="textClass">CECS 525 Final Project</h2>
+  </div>
+  <div class="textClass">
+    <ngx-gauge [type]="odb.gaugeType"
+            [value]="odb.gaugeValue" 
+            [label]="odb.gaugeLabel"  
+            [append]="odb.gaugeAppendText"
+            [animate]="odb.gaugeAnimate"
+            [cap]="odb.gaugeCap"
+            [thick]="odb.gaugeThickness"
+            [prepend]="odb.gaugePrepend"
+            [duration]="odb.gaugeDuration"
+            [size]="odb.gaugeSize"
+            [backgroundColor]="odb.gaugeBackColor"
+            [foregroundColor]="odb.gaugeColor">
+    </ngx-gauge>
+    <ngx-gauge [type]="odb.gaugeType" 
+            [value]="odb.gaugeValue" 
+            [label]="odb.gaugeLabel"  
+            [append]="odb.gaugeAppendText"
+            [animate]="odb.gaugeAnimate"
+            [foregroundColor]="odb.gaugeColor">
+    </ngx-gauge>
+  </div>
+  <div class="textClass">
+    <ngx-gauge [type]="odb.gaugeType" 
+            [value]="odb.gaugeValue" 
+            [label]="odb.gaugeLabel"
+            [append]="odb.gaugeAppendText"
+            [foregroundColor]="odb.gaugeColor2">
+    </ngx-gauge>
+    <ngx-gauge [type]="odb.gaugeType" 
+            [value]="odb.gaugeValue" 
+            [label]="odb.gaugeLabel"  
+            [append]="odb.gaugeAppendText"
+            [foregroundColor]="odb.gaugeColor2">
+    </ngx-gauge>
+  </div>
+  <div>
+    <h2 class="textClass">Citations</h2>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <h2><a class="alink" target="_blank" rel="noopener" href="https://angular.io/docs">Angular Documentation</a></h2>
+      </li>
+      <li>
+        <h2><a class="alink" target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+      </li>
+      <li>
+        <h2><a class="alink" target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+      </li>
+      <li>
+        <h2><a class="alink" target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+      </li>
+    </ul>
+  </div>
+</div>

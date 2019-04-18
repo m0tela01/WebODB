@@ -1,0 +1,9 @@
+a:link{
+    color: red;
+}
+a:visited{
+    color:lightcoral;
+}
+a:hover{
+    color: rgb(64, 214, 129)
+}
