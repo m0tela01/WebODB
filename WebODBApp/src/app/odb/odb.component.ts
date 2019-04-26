@@ -17,6 +17,10 @@ import { AngularFireDatabase } from 'angularfire2/database'
 import { tap, map, switchMap, first } from 'rxjs/operators';
 import { getLocaleDateFormat } from '@angular/common';
 import { element } from '@angular/core/src/render3';
+
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api';                 //api
+
 //import { getHeapStatistics } from 'v8';
 
 export interface Item { name: string; }
@@ -204,9 +208,9 @@ export class OdbComponent implements OnInit {
 		gaugeAnimate: "true",
 		gaugeBackColor: "rgba(128, 128, 150)",
 		gaugeCap: "round",
-		gaugeThickness: "9",
-		gaugeDuration: "1100",
-		gaugeSize: "300",
+		gaugeThickness: "15",
+		gaugeDuration: "100",
+		gaugeSize: "375",
 		gaugeMax: "200",
 		gaugePrepend: ""
 	};
@@ -214,45 +218,47 @@ export class OdbComponent implements OnInit {
 	load: OdbGauge = {
 		gaugeType: "semi",
 		gaugeLabel: "Engine Load",
-		gaugeAppendText: "%",
+		gaugeAppendText: " %",
 		gaugeColor2: "rgba(236, 29, 14)",
-		gaugeColor: "rgba(0, 221, 166)",
+		gaugeColor: "rgba(177, 238, 84)",
 		gaugeAnimate: "false",
 		gaugeBackColor: "rgba(128, 128, 150)",
 		gaugeCap: "round",
-		gaugeThickness: "9",
-		gaugeDuration: "1100",
-		gaugeSize: "300",
+		gaugeThickness: "15",
+		gaugeDuration: "100",
+		gaugeSize: "375",
 		gaugeMax: "100",
 		gaugePrepend: ""
 	}; 
+
 	rpm: OdbGauge = {
 		gaugeType: "semi",
 		gaugeLabel: "RPM",
 		gaugeAppendText: "",
 		gaugeColor2: "rgba(236, 29, 14)",
-		gaugeColor: "rgba(0, 221, 166)",
-		gaugeAnimate: "true",
+		gaugeColor: "rgba(238, 84, 84)",
+		gaugeAnimate: "false",
 		gaugeBackColor: "rgba(128, 128, 150)",
 		gaugeCap: "round",
-		gaugeThickness: "9",
-		gaugeDuration: "1100",
-		gaugeSize: "300",
+		gaugeThickness: "15",
+		gaugeDuration: "100",
+		gaugeSize: "375",
 		gaugeMax: "9000",
 		gaugePrepend: ""
 	};
+	
 	throttle: OdbGauge = {
 		gaugeType: "semi",
 		gaugeLabel: "Throttle Position",
-		gaugeAppendText: "%",
+		gaugeAppendText: " %",
 		gaugeColor2: "rgba(236, 29, 14)",
-		gaugeColor: "rgba(0, 221, 166)",
-		gaugeAnimate: "true",
+		gaugeColor: "rgba(177, 93, 232)",
+		gaugeAnimate: "false",
 		gaugeBackColor: "rgba(128, 128, 150)",
 		gaugeCap: "round",
-		gaugeThickness: "9",
-		gaugeDuration: "1100",
-		gaugeSize: "300",
+		gaugeThickness: "15",
+		gaugeDuration: "100",
+		gaugeSize: "375",
 		gaugeMax: "100",
 		gaugePrepend: ""
 	};

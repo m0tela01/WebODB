@@ -1,5 +1,13 @@
 
-
+a:link{
+  color: red;
+}
+a:visited{
+  color:lightcoral;
+}
+a:hover{
+  color: rgb(64, 214, 129)
+}
 
 .chart1{
   color-adjust: rgba(255,255,255,  0.7);
@@ -13,5 +21,5 @@
   position: relative;
   width: 450px;
   left: 1200px;
-  bottom: 410px
+  bottom: 500px
 }

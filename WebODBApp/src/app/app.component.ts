@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Web OBD2 ';
+  title = 'Web OBDv2 ';
 }
 
