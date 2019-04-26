@@ -1,9 +1,17 @@
-a:link{
-    color: red;
+
+
+
+.chart1{
+  color-adjust: rgba(255,255,255,  0.7);
 }
-a:visited{
-    color:lightcoral;
+.chart1 .canvasjs-chart-canvas{
+  color: rgb(235, 84, 84);
+  opacity: 0.3;
+  filter: alpha(opacity=30);
 }
-a:hover{
-    color: rgb(64, 214, 129)
+.chart3{
+  position: relative;
+  width: 450px;
+  left: 1200px;
+  bottom: 410px
 }

@@ -1,61 +1,92 @@
 <!--The page data/elements-->
 <div>
   <div>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  </div>
+
+  <div>
     <h2 class="textClass">CECS 525 Final Project</h2>
   </div>
-  <div class="textClass">
-    <ngx-gauge [type]="odb.gaugeType"
-            [value]="odb.gaugeValue" 
-            [label]="odb.gaugeLabel"  
-            [append]="odb.gaugeAppendText"
-            [animate]="odb.gaugeAnimate"
-            [cap]="odb.gaugeCap"
-            [thick]="odb.gaugeThickness"
-            [prepend]="odb.gaugePrepend"
-            [duration]="odb.gaugeDuration"
-            [size]="odb.gaugeSize"
-            [backgroundColor]="odb.gaugeBackColor"
-            [foregroundColor]="odb.gaugeColor">
-    </ngx-gauge>
-    <ngx-gauge [type]="odb.gaugeType" 
-            [value]="odb.gaugeValue" 
-            [label]="odb.gaugeLabel"  
-            [append]="odb.gaugeAppendText"
-            [animate]="odb.gaugeAnimate"
-            [foregroundColor]="odb.gaugeColor">
-    </ngx-gauge>
+  <div>
+    <h3 class="textClass">Sensors</h3>
+    <div class="textClass">
+      <ngx-gauge [value]="gaugeValueCoolant" 
+              [type]="coolant.gaugeType"
+              [label]="coolant.gaugeLabel"  
+              [append]="coolant.gaugeAppendText"
+              [animate]="coolant.gaugeAnimate"
+              [cap]="coolant.gaugeCap"
+              [thick]="coolant.gaugeThickness"
+              [prepend]="coolant.gaugePrepend"
+              [duration]="coolant.gaugeDuration"
+              [size]="coolant.gaugeSize"
+              [max] = "coolant.gaugeMax"
+              [backgroundColor]="coolant.gaugeBackColor"
+              [foregroundColor]="coolant.gaugeColor">
+      </ngx-gauge>
+      <ngx-gauge [value]="gaugeValueLoad" 
+              [type]="load.gaugeType"
+              [label]="load.gaugeLabel"  
+              [append]="load.gaugeAppendText"
+              [animate]="load.gaugeAnimate"
+              [cap]="load.gaugeCap"
+              [thick]="load.gaugeThickness"
+              [prepend]="load.gaugePrepend"
+              [duration]="load.gaugeDuration"
+              [size]="load.gaugeSize"
+              [max] = "load.gaugeMax"
+              [backgroundColor]="load.gaugeBackColor"
+              [foregroundColor]="load.gaugeColor">
+      </ngx-gauge>
+      <ngx-gauge [value]="gaugeValueRPM" 
+              [type]="rpm.gaugeType"
+              [label]="rpm.gaugeLabel"  
+              [append]="rpm.gaugeAppendText"
+              [animate]="rpm.gaugeAnimate"
+              [cap]="rpm.gaugeCap"
+              [thick]="rpm.gaugeThickness"
+              [prepend]="rpm.gaugePrepend"
+              [duration]="rpm.gaugeDuration"
+              [size]="rpm.gaugeSize"
+              [max] = "rpm.gaugeMax"
+              [backgroundColor]="rpm.gaugeBackColor"
+              [foregroundColor]="rpm.gaugeColor">
+      </ngx-gauge>
+      <ngx-gauge [value]="gaugeValueThrottle" 
+              [type]="throttle.gaugeType"
+              [label]="throttle.gaugeLabel"  
+              [append]="throttle.gaugeAppendText"
+              [animate]="throttle.gaugeAnimate"
+              [cap]="throttle.gaugeCap"
+              [thick]="throttle.gaugeThickness"
+              [prepend]="throttle.gaugePrepend"
+              [duration]="throttle.gaugeDuration"
+              [size]="throttle.gaugeSize"
+              [max] = "throttle.gaugeMax"
+              [backgroundColor]="throttle.gaugeBackColor"
+              [foregroundColor]="throttle.gaugeColor">
+      </ngx-gauge>
+    </div>
   </div>
-  <div class="textClass">
-    <ngx-gauge [type]="odb.gaugeType" 
-            [value]="odb.gaugeValue" 
-            [label]="odb.gaugeLabel"
-            [append]="odb.gaugeAppendText"
-            [foregroundColor]="odb.gaugeColor2">
-    </ngx-gauge>
-    <ngx-gauge [type]="odb.gaugeType" 
-            [value]="odb.gaugeValue" 
-            [label]="odb.gaugeLabel"  
-            [append]="odb.gaugeAppendText"
-            [foregroundColor]="odb.gaugeColor2">
-    </ngx-gauge>
-  </div>
+  <!--<div>
+    <div id="chartContainer" class="chart1" style="height: 500px; width: 50%;"></div>
+    <div id="chartContainer3" class="chart3" style="height: 370px;"></div>
+    <div id="chartContainer2" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
+    <div id="chartContainer4" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto; background:"></div>
+  </div>-->
   <div>
     <h2 class="textClass">Citations</h2>
   </div>
-  <div>
-    <ul>
-      <li>
-        <h2><a class="alink" target="_blank" rel="noopener" href="https://angular.io/docs">Angular Documentation</a></h2>
-      </li>
-      <li>
-        <h2><a class="alink" target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-      </li>
-      <li>
-        <h2><a class="alink" target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-      </li>
-      <li>
-        <h2><a class="alink" target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-      </li>
-    </ul>
-  </div>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCJV79IhlSdhtAOBLJz9H5dAGxfzjSau4Y",
+      authDomain: "webobdbase.firebaseapp.com",
+      databaseURL: "https://webobdbase.firebaseio.com",
+      projectId: "webobdbase",
+      storageBucket: "webobdbase.appspot.com",
+      messagingSenderId: "184771792235"
+    };
+    firebase.initializeApp(config);
+  </script>
 </div>

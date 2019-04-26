@@ -10,6 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { OdbComponent } from './odb/odb.component';
 import { FormsModule } from '@angular/forms';
 
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+//import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     GaugeModule.forRoot(),
     NgxGaugeModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

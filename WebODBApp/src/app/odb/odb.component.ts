@@ -1,33 +1,87 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Odb } from '../../odb';
+import { Odb, OdbGauge, ObdInterface } from '../../odb';
 import { ODBDataService } from '../odbdata.service';
 import * as CanvasJS from '../../canvasjs.min';
 import * as $ from 'jquery';
 
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
+
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Observable, of, observable } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
+//import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from 'angularfire2/database'
+import { tap, map, switchMap, first } from 'rxjs/operators';
+import { getLocaleDateFormat } from '@angular/common';
+import { element } from '@angular/core/src/render3';
+//import { getHeapStatistics } from 'v8';
+
+export interface Item { name: string; }
+
+const firebaseConfig = {
+	apiKey: "AIzaSyCJV79IhlSdhtAOBLJz9H5dAGxfzjSau4Y",
+	authDomain: "webobdbase.firebaseapp.com",
+	databaseURL: "https://webobdbase.firebaseio.com",
+	projectId: "webobdbase",
+	storageBucket: "webobdbase.appspot.com",
+	messagingSenderId: "184771792235"
+};	
+
+ firebase.initializeApp(firebaseConfig);
+ 
 @Component({
   selector: 'app-odb',
   templateUrl: './odb.component.html',
-  styleUrls: ['./odb.component.css']
+  styleUrls: ['./odb.component.css'],
 })
 export class OdbComponent implements OnInit {
-  /*gaugeType = this.getGaugeType("semi");
-  gaugeValue = this.getANumber();//this.getANumber();
-  gaugeLabel = this.getGaugeLabel("Speed");
-  gaugeAppendText = this.getGaugeAppededtext("km/hr");
-  gaugeColor = "rgba(236, 29, 14)";
-  gaugeColor2 = "rgba(0, 221, 166)";
-  gaugeAnimate = "true";
-  gaugeBackColor = "rgba(255, 255, 255)";
-  */
+	gaugeValueCoolant: any;
+	gaugeValueLoad: any;
+	gaugeValueRPM: any;
+	gaugeValueThrottle: any;
+	
+	gaugeColor= "rgba(0, 221, 166)"
+	obd2: any;
 
-	constructor() { 
+	constructor(private db: AngularFireDatabase){
 	}
+
+
+	public innerWidth: any;
 	ngOnInit() {
+
+		var dog = [];
+		var fromDataBase = this.db.list('/')
+		.snapshotChanges().subscribe(
+			item => {
+				setTimeout(() => {
+					this.obd2 = item.map(e =>e.payload.toJSON())
+					console.log(this.obd2)
+					
+					this.gaugeValueCoolant = this.obd2[0]["CoolantTemp"];
+					this.gaugeValueLoad = this.obd2[0]["EngineLoad"];
+					this.gaugeValueRPM = this.obd2[0]["RPM"]
+					this.gaugeValueThrottle = this.obd2[0]["ThrottlePosition"]
+				}, 100);
+
+			}
+			
+		)
+		
+
+		this.innerWidth = window.innerWidth;
+
+		
+
 
 		let chart = new CanvasJS.Chart("chartContainer", {
 			animationEnabled: true,
 			exportEnabled: true,
+			creditText: "",
+			backgroundColor: "#00ffffff",
 			title: {
 				text: "Basic Column Chart in Angular"
 			},
@@ -141,43 +195,65 @@ export class OdbComponent implements OnInit {
 		}
 	}
 
-  odb: Odb = {
-    gaugeType: this.getGaugeType("semi"),
-    gaugeValue: this.getGaugeValue("speedInKMHR"),
-    gaugeLabel: this.getGaugeLabel("Speed"),
-    gaugeAppendText: this.getGaugeAppededtext("km/hr"),
-    gaugeColor2: "rgba(236, 29, 14)",
-    gaugeColor: "rgba(0, 221, 166)",
-    gaugeAnimate: "true",
-    gaugeBackColor: "rgba(128, 128, 150)",
-    gaugeCap: "round",
-    gaugeThickness: "9",
-    gaugeDuration: "3500",
-    gaugeSize: "300",
-    gaugePrepend: "p",
-  };
+	coolant: OdbGauge = {
+		gaugeType: "semi",
+		gaugeLabel: "Coolant Temperature",
+		gaugeAppendText: "°C",
+		gaugeColor2: "rgba(236, 29, 14)",
+		gaugeColor: "rgba(0, 221, 166)",
+		gaugeAnimate: "true",
+		gaugeBackColor: "rgba(128, 128, 150)",
+		gaugeCap: "round",
+		gaugeThickness: "9",
+		gaugeDuration: "1100",
+		gaugeSize: "300",
+		gaugeMax: "200",
+		gaugePrepend: ""
+	};
 
-  getGaugeType(type){
-    return type;
-  }
-
-  getGaugeLabel(label){
-    return label;
-  }
-
-  getGaugeAppededtext(text){
-    return text;
-  }
-
-  getRandomNumber(maxValue) {
-    return Math.floor(Math.random() * Math.floor(maxValue));
-  }
-
-  getGaugeValue(theValueToGet) : any {
-    theValueToGet = "";
-    let i = 11;
-    let val = 61;
-    return val + this.getRandomNumber(i) + 10;
-	}
-	
+	load: OdbGauge = {
+		gaugeType: "semi",
+		gaugeLabel: "Engine Load",
+		gaugeAppendText: "%",
+		gaugeColor2: "rgba(236, 29, 14)",
+		gaugeColor: "rgba(0, 221, 166)",
+		gaugeAnimate: "false",
+		gaugeBackColor: "rgba(128, 128, 150)",
+		gaugeCap: "round",
+		gaugeThickness: "9",
+		gaugeDuration: "1100",
+		gaugeSize: "300",
+		gaugeMax: "100",
+		gaugePrepend: ""
+	}; 
+	rpm: OdbGauge = {
+		gaugeType: "semi",
+		gaugeLabel: "RPM",
+		gaugeAppendText: "",
+		gaugeColor2: "rgba(236, 29, 14)",
+		gaugeColor: "rgba(0, 221, 166)",
+		gaugeAnimate: "true",
+		gaugeBackColor: "rgba(128, 128, 150)",
+		gaugeCap: "round",
+		gaugeThickness: "9",
+		gaugeDuration: "1100",
+		gaugeSize: "300",
+		gaugeMax: "9000",
+		gaugePrepend: ""
+	};
+	throttle: OdbGauge = {
+		gaugeType: "semi",
+		gaugeLabel: "Throttle Position",
+		gaugeAppendText: "%",
+		gaugeColor2: "rgba(236, 29, 14)",
+		gaugeColor: "rgba(0, 221, 166)",
+		gaugeAnimate: "true",
+		gaugeBackColor: "rgba(128, 128, 150)",
+		gaugeCap: "round",
+		gaugeThickness: "9",
+		gaugeDuration: "1100",
+		gaugeSize: "300",
+		gaugeMax: "100",
+		gaugePrepend: ""
+	};
 }
