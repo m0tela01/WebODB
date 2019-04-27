@@ -2,27 +2,24 @@
 <div>
   <div>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <p>&nbsp;</p>
   </div>
-
-  <div>
-    <p>&nbsp;</p><p>&nbsp;</p>
-  </div>
-  <div>
+  <div align="center">
     <h2 class="textClass" style="text-align: center">Sensor outputs from vehicle</h2>
-        <div class="textClass">
-      <ngx-gauge [value]="gaugeValueCoolant" 
-              [type]="coolant.gaugeType"
-              [label]="coolant.gaugeLabel"  
-              [append]="coolant.gaugeAppendText"
-              [animate]="coolant.gaugeAnimate"
-              [cap]="coolant.gaugeCap"
-              [thick]="coolant.gaugeThickness"
-              [prepend]="coolant.gaugePrepend"
-              [duration]="coolant.gaugeDuration"
-              [size]="coolant.gaugeSize"
-              [max] = "coolant.gaugeMax"
-              [backgroundColor]="coolant.gaugeBackColor"
-              [foregroundColor]="coolant.gaugeColor">
+    <div class="textClass">
+      <ngx-gauge [value]="gaugeValueSpeedInKPH" 
+              [type]="spdKph.gaugeType"
+              [label]="spdKph.gaugeLabel"  
+              [append]="spdKph.gaugeAppendText"
+              [animate]="spdKph.gaugeAnimate"
+              [cap]="spdKph.gaugeCap"
+              [thick]="spdKph.gaugeThickness"
+              [prepend]="spdKph.gaugePrepend"
+              [duration]="spdKph.gaugeDuration"
+              [size]="spdKph.gaugeSize"
+              [max] = "spdKph.gaugeMax"
+              [backgroundColor]="spdKph.gaugeBackColor"
+              [foregroundColor]="spdKph.gaugeColor">
       </ngx-gauge>
       <ngx-gauge [value]="gaugeValueLoad" 
               [type]="load.gaugeType"
@@ -38,20 +35,6 @@
               [backgroundColor]="load.gaugeBackColor"
               [foregroundColor]="load.gaugeColor">
       </ngx-gauge>
-      <ngx-gauge [value]="gaugeValueRPM" 
-              [type]="rpm.gaugeType"
-              [label]="rpm.gaugeLabel"  
-              [append]="rpm.gaugeAppendText"
-              [animate]="rpm.gaugeAnimate"
-              [cap]="rpm.gaugeCap"
-              [thick]="rpm.gaugeThickness"
-              [prepend]="rpm.gaugePrepend"
-              [duration]="rpm.gaugeDuration"
-              [size]="rpm.gaugeSize"
-              [max] = "rpm.gaugeMax"
-              [backgroundColor]="rpm.gaugeBackColor"
-              [foregroundColor]="rpm.gaugeColor">
-      </ngx-gauge>
       <ngx-gauge [value]="gaugeValueThrottle" 
               [type]="throttle.gaugeType"
               [label]="throttle.gaugeLabel"  
@@ -66,49 +49,35 @@
               [backgroundColor]="throttle.gaugeBackColor"
               [foregroundColor]="throttle.gaugeColor">
       </ngx-gauge>
-      <ngx-gauge [value]="gaugeValueThrottle" 
-              [type]="throttle.gaugeType"
-              [label]="throttle.gaugeLabel"  
-              [append]="throttle.gaugeAppendText"
-              [animate]="throttle.gaugeAnimate"
-              [cap]="throttle.gaugeCap"
-              [thick]="throttle.gaugeThickness"
-              [prepend]="throttle.gaugePrepend"
-              [duration]="throttle.gaugeDuration"
-              [size]="throttle.gaugeSize"
-              [max] = "throttle.gaugeMax"
-              [backgroundColor]="throttle.gaugeBackColor"
-              [foregroundColor]="throttle.gaugeColor">
+      <ngx-gauge [value]="gaugeValueCoolant" 
+              [type]="coolant.gaugeType"
+              [label]="coolant.gaugeLabel"  
+              [append]="coolant.gaugeAppendText"
+              [animate]="coolant.gaugeAnimate"
+              [cap]="coolant.gaugeCap"
+              [thick]="coolant.gaugeThickness"
+              [prepend]="coolant.gaugePrepend"
+              [duration]="coolant.gaugeDuration"
+              [size]="coolant.gaugeSize"
+              [max] = "coolant.gaugeMax"
+              [backgroundColor]="coolant.gaugeBackColor"
+              [foregroundColor]="coolant.gaugeColor">
       </ngx-gauge>
     </div>
     <div class="textClass">
-      <ngx-gauge [value]="gaugeValueCoolant" 
-              [type]="coolant.gaugeType"
-              [label]="coolant.gaugeLabel"  
-              [append]="coolant.gaugeAppendText"
-              [animate]="coolant.gaugeAnimate"
-              [cap]="coolant.gaugeCap"
-              [thick]="coolant.gaugeThickness"
-              [prepend]="coolant.gaugePrepend"
-              [duration]="coolant.gaugeDuration"
-              [size]="coolant.gaugeSize"
-              [max] = "coolant.gaugeMax"
-              [backgroundColor]="coolant.gaugeBackColor"
-              [foregroundColor]="coolant.gaugeColor">
-      </ngx-gauge>
-      <ngx-gauge [value]="gaugeValueLoad" 
-              [type]="load.gaugeType"
-              [label]="load.gaugeLabel"  
-              [append]="load.gaugeAppendText"
-              [animate]="load.gaugeAnimate"
-              [cap]="load.gaugeCap"
-              [thick]="load.gaugeThickness"
-              [prepend]="load.gaugePrepend"
-              [duration]="load.gaugeDuration"
-              [size]="load.gaugeSize"
-              [max] = "load.gaugeMax"
-              [backgroundColor]="load.gaugeBackColor"
-              [foregroundColor]="load.gaugeColor">
+      <ngx-gauge [value]="gaugeValueSpeedInMPH" 
+              [type]="spdMph.gaugeType"
+              [label]="spdMph.gaugeLabel"  
+              [append]="spdMph.gaugeAppendText"
+              [animate]="spdMph.gaugeAnimate"
+              [cap]="spdMph.gaugeCap"
+              [thick]="spdMph.gaugeThickness"
+              [prepend]="spdMph.gaugePrepend"
+              [duration]="spdMph.gaugeDuration"
+              [size]="spdMph.gaugeSize"
+              [max] = "spdMph.gaugeMax"
+              [backgroundColor]="spdMph.gaugeBackColor"
+              [foregroundColor]="spdMph.gaugeColor">
       </ngx-gauge>
       <ngx-gauge [value]="gaugeValueRPM" 
               [type]="rpm.gaugeType"
@@ -124,42 +93,35 @@
               [backgroundColor]="rpm.gaugeBackColor"
               [foregroundColor]="rpm.gaugeColor">
       </ngx-gauge>
-      <ngx-gauge [value]="gaugeValueThrottle" 
-              [type]="throttle.gaugeType"
-              [label]="throttle.gaugeLabel"  
-              [append]="throttle.gaugeAppendText"
-              [animate]="throttle.gaugeAnimate"
-              [cap]="throttle.gaugeCap"
-              [thick]="throttle.gaugeThickness"
-              [prepend]="throttle.gaugePrepend"
-              [duration]="throttle.gaugeDuration"
-              [size]="throttle.gaugeSize"
-              [max] = "throttle.gaugeMax"
-              [backgroundColor]="throttle.gaugeBackColor"
-              [foregroundColor]="throttle.gaugeColor">
+      <ngx-gauge [value]="gaugeValueDegreeRaceCar" 
+              [type]="raceCar.gaugeType"
+              [label]="raceCar.gaugeLabel"  
+              [append]="raceCar.gaugeAppendText"
+              [animate]="raceCar.gaugeAnimate"
+              [cap]="raceCar.gaugeCap"
+              [thick]="raceCar.gaugeThickness"
+              [prepend]="raceCar.gaugePrepend"
+              [duration]="raceCar.gaugeDuration"
+              [size]="raceCar.gaugeSize"
+              [max] = "raceCar.gaugeMax"
+              [backgroundColor]="raceCar.gaugeBackColor"
+              [foregroundColor]="raceCar.gaugeColor">
       </ngx-gauge>
-      <ngx-gauge [value]="gaugeValueThrottle" 
-              [type]="throttle.gaugeType"
-              [label]="throttle.gaugeLabel"  
-              [append]="throttle.gaugeAppendText"
-              [animate]="throttle.gaugeAnimate"
-              [cap]="throttle.gaugeCap"
-              [thick]="throttle.gaugeThickness"
-              [prepend]="throttle.gaugePrepend"
-              [duration]="throttle.gaugeDuration"
-              [size]="throttle.gaugeSize"
-              [max] = "throttle.gaugeMax"
-              [backgroundColor]="throttle.gaugeBackColor"
-              [foregroundColor]="throttle.gaugeColor">
+      <ngx-gauge [value]="gaugeValueAirIntake" 
+              [type]="airIntake.gaugeType"
+              [label]="airIntake.gaugeLabel"  
+              [append]="airIntake.gaugeAppendText"
+              [animate]="airIntake.gaugeAnimate"
+              [cap]="airIntake.gaugeCap"
+              [thick]="airIntake.gaugeThickness"
+              [prepend]="airIntake.gaugePrepend"
+              [duration]="airIntake.gaugeDuration"
+              [size]="airIntake.gaugeSize"
+              [max] = "airIntake.gaugeMax"
+              [backgroundColor]="airIntake.gaugeBackColor"
+              [foregroundColor]="airIntake.gaugeColor">
       </ngx-gauge>
     </div>
-  </div>
-  <div>
-    <!--<p-chart type="line" [data]="data" (onDataSelect)="selectData($event)"></p-chart>
-    <div id="chartContainer" class="chart1" style="height: 500px; width: 50%;"></div>
-    <div id="chartContainer3" class="chart3" style="height: 500px;"></div>
-    <div id="chartContainer2" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
-    <div id="chartContainer4" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto; background:"></div>-->
   </div>
   <div>
   <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
@@ -183,14 +145,14 @@
       <li>
         <h2><a class="alink" target="_blank" rel="noopener" href="https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md">Apache Documentation</a></h2>
       </li>
-      <li>
-        <h2><a class="alink" target="_blank" rel="noopener" href="https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md">Apache</a></h2>
-      </li>
     </ul>
     <h2 class="textClass">Github</h2>
     <ul>
       <li>
-        <h2><a class="alink" target="_blank" rel="noopener" href="https://github.com/m0tela01/WebODB">WebOBD2 warehouse</a></h2>
+        <h2><a class="alink" target="_blank" rel="noopener" href="https://github.com/michaeltelahun/OBD2Database">WebOBD2 database</a></h2>
+      </li>
+      <li>
+        <h2><a class="alink" target="_blank" rel="noopener" href="https://github.com/m0tela01/WebODB">WebOBD2 website</a></h2>
       </li>
     </ul>
   </div>
