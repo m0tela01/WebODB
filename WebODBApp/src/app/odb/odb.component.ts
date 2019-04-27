@@ -1,27 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Odb, OdbGauge, ObdInterface } from '../../odb';
-import { ODBDataService } from '../odbdata.service';
-import * as CanvasJS from '../../canvasjs.min';
-import * as $ from 'jquery';
-
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
-
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Observable, of, observable } from 'rxjs';
-import { AngularFireAuth } from '@angular/fire/auth';
-//import { AngularFireDatabase } from '@angular/fire/database';
+import { OdbGauge } from '../../odb';
 import { AngularFireDatabase } from 'angularfire2/database'
-import { tap, map, switchMap, first } from 'rxjs/operators';
-import { getLocaleDateFormat } from '@angular/common';
-import { element } from '@angular/core/src/render3';
 
-import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-import {MenuItem} from 'primeng/api';                 //api
 
-//import { getHeapStatistics } from 'v8';
 
 export interface Item { name: string; }
 
