@@ -181,8 +181,8 @@ export class OdbComponent implements OnInit {
 
 	airIntake: OdbGauge = {
 		gaugeType: "semi",
-		gaugeLabel: "Air Intake",
-		gaugeAppendText: " °F",
+		gaugeLabel: "Air Intake Temperature",
+		gaugeAppendText: " °C",
 		gaugeColor2: "rgba(236, 29, 14)",
 		gaugeColor: "rgba(234, 235, 236)",
 		gaugeAnimate: "false",
@@ -191,7 +191,7 @@ export class OdbComponent implements OnInit {
 		gaugeThickness: "15",
 		gaugeDuration: "100",
 		gaugeSize: "375",
-		gaugeMax: "100",
+		gaugeMax: "150",
 		gaugePrepend: ""
 	};
 
