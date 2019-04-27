@@ -8,7 +8,7 @@ An Angular web application to view OBD2 data from a car over an internet connect
 
 ## Install
 
-Do this after cloning
+Do this after cloning.
 
 cd to the folder /WebODBApp and delete the 'node_modules' folder then run:
 sudo npm install 
