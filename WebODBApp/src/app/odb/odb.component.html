@@ -49,6 +49,20 @@
               [backgroundColor]="throttle.gaugeBackColor"
               [foregroundColor]="throttle.gaugeColor">
       </ngx-gauge>
+      <ngx-gauge [value]="gaugeValueFuelPressure" 
+              [type]="fpressure.gaugeType"
+              [label]="fpressure.gaugeLabel"  
+              [append]="fpressure.gaugeAppendText"
+              [animate]="fpressure.gaugeAnimate"
+              [cap]="fpressure.gaugeCap"
+              [thick]="fpressure.gaugeThickness"
+              [prepend]="fpressure.gaugePrepend"
+              [duration]="fpressure.gaugeDuration"
+              [size]="fpressure.gaugeSize"
+              [max] = "fpressure.gaugeMax"
+              [backgroundColor]="fpressure.gaugeBackColor"
+              [foregroundColor]="fpressure.gaugeColor">
+      </ngx-gauge>
       <ngx-gauge [value]="gaugeValueCoolant" 
               [type]="coolant.gaugeType"
               [label]="coolant.gaugeLabel"  
