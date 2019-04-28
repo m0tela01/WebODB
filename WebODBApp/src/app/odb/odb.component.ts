@@ -33,10 +33,11 @@ export class OdbComponent implements OnInit {
 	gaugeValueThrottle: any;
 	gaugeValueSpeedInKPH: any;
 	gaugeValueSpeedInMPH: any;
+  gaugeValueFuelPressure: any;
 	gaugeValueAirIntake: any;
 	gaugeValueDegreeRaceCar: any;
 	
-	gaugeColor= "rgba(0, 221, 166)"
+	//gaugeColor= "rgba(0, 221, 166)"
 	obd2: any;
 
 	constructor(private db: AngularFireDatabase){
@@ -51,7 +52,7 @@ export class OdbComponent implements OnInit {
 			item => {
 				setTimeout(() => {
 					this.obd2 = item.map(e =>e.payload.toJSON())
-					console.log(this.obd2)
+					//console.log(this.obd2)
 					
 					this.gaugeValueCoolant = this.obd2[0]["CoolantTemp"];
 					this.gaugeValueLoad = this.obd2[0]["EngineLoad"];
@@ -59,6 +60,7 @@ export class OdbComponent implements OnInit {
 					this.gaugeValueThrottle = this.obd2[0]["ThrottlePosition"]
 					this.gaugeValueSpeedInKPH = this.obd2[0]["SpeedKPH"]
 					this.gaugeValueSpeedInMPH = this.obd2[0]["SpeedMPH"]
+          this.gaugeValueFuelPressure = this.obd2[0]["FuelPressure"]
 					this.gaugeValueAirIntake = this.obd2[0]["AirIntake"]
 					this.gaugeValueDegreeRaceCar = this.obd2[0]["Degree"]
 				}, 1000);
