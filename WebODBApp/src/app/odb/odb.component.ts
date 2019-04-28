@@ -130,8 +130,25 @@ export class OdbComponent implements OnInit {
 		gaugeMax: "100",
 		gaugePrepend: ""
 	};
+  
+	fpressure: OdbGauge = {
+		gaugeType: "full",
+		gaugeLabel: "Fuel Pressure",
+		gaugeAppendText: " kPa",
+		gaugeColor2: "rgba(236, 29, 14)",
+		gaugeColor: "rgba(153, 102, 102)",
+		gaugeAnimate: "false",
+		gaugeBackColor: "rgba(128, 128, 150)",
+		gaugeCap: "round",
+		gaugeThickness: "15",
+		gaugeDuration: "100",
+		gaugeSize: "375",
+		gaugeMax: "825",
+		gaugePrepend: ""
+	};
 		
-	// row 2
+	
+  // row 2
 	spdKph: OdbGauge = {
 		gaugeType: "semi",
 		gaugeLabel: "Speed",
