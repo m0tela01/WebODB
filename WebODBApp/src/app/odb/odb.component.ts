@@ -33,16 +33,14 @@ export class OdbComponent implements OnInit {
 	gaugeValueThrottle: any;
 	gaugeValueSpeedInKPH: any;
 	gaugeValueSpeedInMPH: any;
-  gaugeValueFuelPressure: any;
+  	gaugeValueFuelPressure: any;
 	gaugeValueAirIntake: any;
 	gaugeValueDegreeRaceCar: any;
 	
-	//gaugeColor= "rgba(0, 221, 166)"
 	obd2: any;
 
 	constructor(private db: AngularFireDatabase){
 	}
-
 
 	public innerWidth: any;
 	ngOnInit() {
@@ -52,7 +50,7 @@ export class OdbComponent implements OnInit {
 			item => {
 				setTimeout(() => {
 					this.obd2 = item.map(e =>e.payload.toJSON())
-					//console.log(this.obd2)
+					console.log(this.obd2[0])
 					
 					this.gaugeValueCoolant = this.obd2[0]["CoolantTemp"];
 					this.gaugeValueLoad = this.obd2[0]["EngineLoad"];
@@ -60,7 +58,7 @@ export class OdbComponent implements OnInit {
 					this.gaugeValueThrottle = this.obd2[0]["ThrottlePosition"]
 					this.gaugeValueSpeedInKPH = this.obd2[0]["SpeedKPH"]
 					this.gaugeValueSpeedInMPH = this.obd2[0]["SpeedMPH"]
-          this.gaugeValueFuelPressure = this.obd2[0]["FuelPressure"]
+          			this.gaugeValueFuelPressure = this.obd2[0]["FuelPressure"]
 					this.gaugeValueAirIntake = this.obd2[0]["AirIntake"]
 					this.gaugeValueDegreeRaceCar = this.obd2[0]["Degree"]
 				}, 1000);
@@ -68,7 +66,6 @@ export class OdbComponent implements OnInit {
 		)
 	}
 
-	//row 1
 	coolant: OdbGauge = {
 		gaugeType: "semi",
 		gaugeLabel: "Coolant Temperature",
@@ -80,7 +77,7 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
+		gaugeSize: "325",
 		gaugeMax: "200",
 		gaugePrepend: ""
 	};
@@ -96,7 +93,7 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
+		gaugeSize: "325",
 		gaugeMax: "100",
 		gaugePrepend: ""
 	}; 
@@ -112,7 +109,7 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
+		gaugeSize: "325",
 		gaugeMax: "9000",
 		gaugePrepend: ""
 	};
@@ -128,7 +125,7 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
+		gaugeSize: "325",
 		gaugeMax: "100",
 		gaugePrepend: ""
 	};
@@ -144,13 +141,11 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
+		gaugeSize: "325",
 		gaugeMax: "825",
 		gaugePrepend: ""
 	};
 		
-	
-  // row 2
 	spdKph: OdbGauge = {
 		gaugeType: "semi",
 		gaugeLabel: "Speed",
@@ -162,8 +157,8 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
-		gaugeMax: "100",
+		gaugeSize: "325",
+		gaugeMax: "260",
 		gaugePrepend: ""
 	};
 
@@ -178,8 +173,8 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
-		gaugeMax: "100",
+		gaugeSize: "325",
+		gaugeMax: "160",
 		gaugePrepend: ""
 	};
 
@@ -194,7 +189,7 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
+		gaugeSize: "325",
 		gaugeMax: "150",
 		gaugePrepend: ""
 	};
@@ -210,8 +205,8 @@ export class OdbComponent implements OnInit {
 		gaugeCap: "round",
 		gaugeThickness: "15",
 		gaugeDuration: "100",
-		gaugeSize: "375",
-		gaugeMax: "5",
+		gaugeSize: "325",
+		gaugeMax: "100",
 		gaugePrepend: ""
 	};
 }
