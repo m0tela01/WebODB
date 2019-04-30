@@ -40,4 +40,5 @@ open the index.html page inside of /var/www/html/dist/WebODB and change the ```<
 _____________________________________________________________________________
 
 you may need to restart the pi or the apache server to see it all working
+
 ```sudo shutdown -r now```   or   ```sudo service apache2 restart```
