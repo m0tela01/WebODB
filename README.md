@@ -17,7 +17,9 @@ cd to the folder /WebODBApp and delete the 'node_modules' folder then run:
 sudo npm install 
 
 publish the package using 'ng build --prod' on the folder /WebODBApp
+
 copy the 'dist' folder that is generated from above to the /var/www/html/
+
 
 open the index.html page inside of dist/WebODB and change the ```<href = "/">``` to ```<href = "./">"```
 
