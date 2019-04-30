@@ -11,7 +11,18 @@ An Angular web application to view OBD2 data from a car over an internet connect
 
 ## Install
 
+#### Do this before cloning.
+
+to host WebBD yourself install apache2 and go to /etc/apache2/sites-available and add the path to the dist folder to the .conf file 
+
+document root
+
+/var/www/html/dist/
+
+_____________________________________________________________________________
+
 #### Do this after cloning.
+
 
 cd to the folder /WebODBApp and delete the 'node_modules' folder then run:
 sudo npm install 
@@ -24,12 +35,4 @@ copy the 'dist' folder that is generated from above to /var/www/html/
 
 _____________________________________________________________________________
 
-open the index.html page inside of dist/WebODB and change the ```<href = "/">``` to ```<href = "./">"```
-
-to host it yourself install apache2 and go to /etc/apache2/sites-available and add the path to the dist folder to the .conf file 
-
-ex: 
-
-document root
-
-/var/www/html/dist/
+open the index.html page inside of /var/www/html/dist/WebODB and change the ```<href = "/">``` to ```<href = "./">"```
