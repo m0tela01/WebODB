@@ -22,6 +22,9 @@ copy the 'dist' folder that is generated from above to the /var/www/html/
 open the index.html page inside of dist/WebODB and change the ```<href = "/">``` to ```<href = "./">"```
 
 to host it yourself install apache2 and go to /etc/apache2/sites-available and add the path to the dist folder to the .conf file 
+
 ex: 
+
 document root
+
 /var/www/html/dist/
