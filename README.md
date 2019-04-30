@@ -13,7 +13,7 @@ An Angular web application to view OBD2 data from a car over an internet connect
 
 #### Do this before cloning.
 
-to host WebBD yourself install apache2 and go to /etc/apache2/sites-available and add the path to the dist folder to the .conf file 
+to host WebBD yourself install apache2 and go to /etc/apache2/sites-enabled and add the path to the dist folder 000-default.conf 
 
 document root
 
