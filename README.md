@@ -16,13 +16,13 @@ An Angular web application to view OBD2 data from a car over an internet connect
 cd to the folder /WebODBApp and delete the 'node_modules' folder then run:
 sudo npm install 
 
-`````````````````````````````````````````````````````````````````````````````
+_____________________________________________________________________________
 
 publish the package using 'ng build --prod' on the folder /WebODBApp
 
 copy the 'dist' folder that is generated from above to /var/www/html/
 
-`````````````````````````````````````````````````````````````````````````````
+_____________________________________________________________________________
 
 open the index.html page inside of dist/WebODB and change the ```<href = "/">``` to ```<href = "./">"```
 
